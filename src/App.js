@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Nav from './Nav'
+import Provider from './Provider'
+
 import './App.css';
+import logo from './logo.svg';
 
 class App extends Component {
   render() {
@@ -8,18 +11,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
+        <Provider> {/* 1. Wrap the children with the Provider Component */}
+          <Nav /> {/* 2. Then all the children from Nav will have access to the Context */}
+        </Provider>
       </div>
     );
   }
